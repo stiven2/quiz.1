@@ -11,6 +11,7 @@ public class Inventario {
         producto p[] = new producto[50];
         for(int i=0; i<p.length; i++) {
             p[i] = new producto();
+            p[i].productonuevo();
         }
         
         int opcion = 7;
@@ -30,34 +31,56 @@ public class Inventario {
            
           case 1: 
             for (int i =0; i<p.length; i++){
-            System.out.println(p[i]);
-            String name = p[i].getNombre();
-            int cant = p[i].getCantidad();
-            float price = p[i].getPrecio();
-            int vend = p[i].getVendido();
+           String x = " ";//compara el arreglo y donde hay un espacio ubica el nuevo prodcuto
+           if (x.equals(p[i].getNombre())){
+               System.out.println("Nuevo producto");
+               p[i].ingresar();
+               i = p.length;
+           
+           
+           }
             }
                 
                break;
-         case 2:  
+         case 2: 
+             
+            System.out.println("Ingrese el nombre del producto a buscar");
+            String o = lector.next();
            for (int i =0; i<p.length; i++){
-           System.out.println(p[i]);
-           
+               
             
+           if (o.equals(p[i].getNombre())){
+               System.out.println("Nombre del prodcuto:" +p[i].getNombre());
+               System.out.println("Cantidad:"+p[i].getCantidad());
+               System.out.println("precio:"+p[i].getPrecio());
+               
+             }
+           if (i==p.length-1){
+               System.out.println("no se encuentra");
+           }    
             
-            
-            
-            }
+   }
                  
                 
-                
-                break;
-          case 3:  
+    break;
+          case 3: 
+              
+              System.out.println("nombre a borrar");
+              String x = lector.next();
+              
             for (int i =0; i<p.length; i++){
-            System.out.println(p[i]);
+            if (i==p.length-1){
+                System.out.println("no se encuentra");
+            }
+            if (x.equals(p[i].getNombre())){
+            p[i].productonuevo();
+            i=p.length;
+            }
+            
             }
                 break;
           case 4:
-              
+              System.out.println("mostrar inventario");
                 for (int i =0; i<p.length; i++){
                 System.out.println(p[i]);
            

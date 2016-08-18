@@ -11,7 +11,7 @@ public class producto {
      
      //Setters
      
-    public void producto(){
+    public void productonuevo(){
     
     nombre = " ";
     cantidad = 0;
